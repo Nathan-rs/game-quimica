@@ -1,0 +1,42 @@
+[
+    {
+        "name": "pentano",
+        "imagem": "",
+        "nomeclatura": {
+            "prefixo": "pent",
+            "infixo": "ano",
+            "sufixo": "o",
+            "ramificação": ""
+        }
+    },
+    {
+        "nome": "Metano",
+        "nomenclatura": {
+          "prefixo": "Met",
+          "infixo": "",
+          "sufixo": "ano",
+          "ramificacao": ""
+        },
+        "imagem": "caminho/para/imagem/metano.png"
+    },
+    {
+        "nome": "Eteno",
+        "nomenclatura": {
+          "prefixo": "E",
+          "infixo": "",
+          "sufixo": "eno",
+          "ramificacao": ""
+        },
+        "imagem": "caminho/para/imagem/eteno.png"
+    },
+    {
+        "nome": "Propino",
+        "nomenclatura": {
+          "prefixo": "P",
+          "infixo": "",
+          "sufixo": "ino",
+          "ramificacao": ""
+        },
+        "imagem": "caminho/para/imagem/propino.png"
+    }
+]
