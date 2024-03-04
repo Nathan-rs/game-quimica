@@ -5,23 +5,37 @@
 }
 
 body {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
 }
 
 .header {
   display: flex;
   justify-content: center;
-  background-color: aqua;
+  border-bottom: 2px solid #c2c2c2;
   padding: 15px;
 }
 
 .content {
-  background-color: #646cff;
-  /* max-width: 1200px; */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.btnMain {
+  background-color: #fff;
+  border: 1px solid #c2c2c2;
+}
+
+.completeCadeia {
+  display: flex;
+  gap: 2px;
+}
+
+.idCadeia {
+  border-bottom: 1px solid #c2c2c2;
+  text-align: center;
+  font-size: 1.25em;
   padding: 10px;
 }
 
@@ -32,7 +46,7 @@ body {
 }
 
 .container {
-  background-color: #646cff;
+  background-color: #f8f8f8;
   height: 60vh;
 }
 
@@ -40,26 +54,23 @@ body {
   border: 1px solid #000;
   width: 300px;
   height: 200px;
-  margin-top: 20px;
 }
 
 .message {
   padding: 5px;
   margin: 40px 80px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 5px;
 
 }
 
 footer {
-  background-color: #030514;
+  background-color: #ffffff;
   padding: 10px;
 }
 
 .button-options {
-  /* background-color: #030514; */
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -70,6 +81,9 @@ footer {
 }
 
 .btn {
+  background-color: #F5F6F7;
+  border: 1px solid transparent;
+  color: #101011;
   gap: 10px;
 }
 
@@ -80,13 +94,11 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 1.25em;
   width: 100px;
   font-weight: 500;
   font-family: inherit;
-  background-color: #ffffff;
   cursor: pointer;
   transition: border-color 0.25s;
 }
