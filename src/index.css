@@ -5,35 +5,49 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .header {
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid #c2c2c2;
-  padding: 15px;
+  border-bottom: 2px solid #dbdbdb;
+  padding: 10px;
 }
 
 .content {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 100px;
+  height: 65vh;
+  justify-content: space-between;
+  /* border: 1px solid blue; */
+
+}
+
+.none {
+  visibility: hidden;
 }
 
 .btnMain {
-  background-color: #fff;
+  background-color: #d8d8d8;
   border: 1px solid #c2c2c2;
 }
 
 .completeCadeia {
   display: flex;
-  gap: 2px;
+  height: 4em;
+  padding: 10px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 15px;
+  gap: 5px;
 }
 
 .idCadeia {
   border-bottom: 1px solid #c2c2c2;
+  background-color: #fff;
+  width: 100%;
   text-align: center;
   font-size: 1.25em;
   padding: 10px;
@@ -46,8 +60,7 @@ body {
 }
 
 .container {
-  background-color: #f8f8f8;
-  height: 60vh;
+  background-color: #ececec;
 }
 
 .image {
@@ -62,7 +75,6 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
-
 }
 
 footer {
@@ -81,7 +93,7 @@ footer {
 }
 
 .btn {
-  background-color: #F5F6F7;
+  background-color: #b8b8b8;
   border: 1px solid transparent;
   color: #101011;
   gap: 10px;

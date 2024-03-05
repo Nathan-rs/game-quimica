@@ -1,10 +1,28 @@
 import '../../index.css'
 import { CardOptions } from '../CardOptions/CardOptions'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import image from '../../assets/images/quimica-estruture.svg'
 
 export function Main() {
     const [clickedButton, setClickedButton] = useState<string[]>([])
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('data.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                const data = await response.json();
+                setData(data)
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+        fetchData()
+    }, [])
+
 
     const handleRemoveButton = (indexRemove: number) => {
         const updateButton = clickedButton.filter((_, index) => index !== indexRemove)

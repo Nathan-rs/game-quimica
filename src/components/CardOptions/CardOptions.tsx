@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Prefixos, Infixos, Sufixos } from "../../functions/Nomeclatuas" 
+import { Prefixos, Infixos, Sufixos } from "../../functions/enumNomeclatuas" 
 
 interface CardOptionsProps{
     onButtonClick: (text: string) => void;
@@ -7,12 +7,7 @@ interface CardOptionsProps{
 
 export function CardOptions({ onButtonClick }: CardOptionsProps) {
 
-    // const [listButton, SetListButton] = useState(true)
     const [listType, setListType] = useState<"prefixos" | "infixos" | "sufixos">("prefixos");
-    // const listPrefixos: string[] = Object.values(Prefixos)
-    // const listInfixos: string[] = Object.values(Infixos)
-
-    // const buttons: string[] = listButton ? Object.values(Prefixos) : Object.values(Infixos)
 
     const handleClick = (text: string) => {
         onButtonClick(text);
