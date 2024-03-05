@@ -6,6 +6,7 @@ import image from '../../assets/images/quimica-estruture.svg'
 export function Main() {
     const [clickedButton, setClickedButton] = useState<string[]>([])
     const [data, setData] = useState([])
+    const [firstChainPrefix, setFirstChainPrefix] = useState<string>("");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -15,7 +16,12 @@ export function Main() {
                     throw new Error('Failed to fetch data');
                 }
                 const data = await response.json();
+                const firstChain = data[0]?.nomeclatura?.prefixo;
                 setData(data)
+                if (firstChain) {
+                    setFirstChainPrefix(firstChain);
+                }
+                console.log(data)
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
@@ -52,7 +58,10 @@ export function Main() {
                 </div>
             </section>
             
-            <CardOptions onButtonClick={(text) => setClickedButton([...clickedButton, text])} />
+            <CardOptions 
+            onButtonClick={(text) => setClickedButton([...clickedButton, text])}
+            firstChainPrefix={firstChainPrefix}
+            />
         </>
     )
 }

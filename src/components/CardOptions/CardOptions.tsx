@@ -1,13 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Prefixos, Infixos, Sufixos } from "../../functions/enumNomeclatuas" 
+import { findRenderedComponentWithType } from "react-dom/test-utils";
 
 interface CardOptionsProps{
     onButtonClick: (text: string) => void;
+    firstChainPrefix: string;
 }
 
-export function CardOptions({ onButtonClick }: CardOptionsProps) {
+export function CardOptions({ onButtonClick, firstChainPrefix }: CardOptionsProps) {
 
     const [listType, setListType] = useState<"prefixos" | "infixos" | "sufixos">("prefixos");
+    const [randomPrefixes, setRandomPrefixes] = useState<string[]>([]);
+
+    useEffect(() => {
+        generateRadom();
+    }, [firstChainPrefix])
+
+    const generateRadom = () => {
+        const prefixesArray = Object.values(Prefixos);
+        const randomIndexes = getRandomIndexes(prefixesArray.length);
+        const randomPrefixes = randomIndexes.map((index) => prefixesArray[index]);
+        setRandomPrefixes(randomPrefixes);
+    }
+
+    const getRandomIndexes = (max: number) => {
+        const indexes = [];
+        while (indexes.length < 3) {
+            const randomIndex = Math.floor(Math.random() * max);
+            if (!indexes.includes(randomIndex)) {
+                indexes.push(randomIndex);
+            }
+        }
+        return indexes;
+    };
 
     const handleClick = (text: string) => {
         onButtonClick(text);
@@ -32,7 +57,7 @@ export function CardOptions({ onButtonClick }: CardOptionsProps) {
     let listButtons: string[] = [];
     switch (listType) {
         case "prefixos":
-            listButtons = Object.values(Prefixos);
+            listButtons = [...randomPrefixes, firstChainPrefix];
             break;
         case "infixos":
             listButtons = Object.values(Infixos);
@@ -41,7 +66,7 @@ export function CardOptions({ onButtonClick }: CardOptionsProps) {
             listButtons = Object.values(Sufixos);
             break;
         default:
-            listButtons = Object.values(Prefixos);
+            listButtons = [...randomPrefixes, firstChainPrefix];
     }
 
     return (
